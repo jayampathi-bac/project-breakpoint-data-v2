@@ -12222,7 +12222,7 @@
   dependencies:
     "whatwg-url" "^5.0.0"
 
-"node-fetch@^3.0.0":
+"node-fetch@^3.0.0", "node-fetch@^3.2.3":
   "integrity" "sha512-AXP18u4pidSZ1xYXRDPY/8jdv3RAozIt/WLNR/MBGZAz+xjtlr90RvCnsvHQRiXyWliZF/CpytExp32UU67/SA=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.3.tgz"
   "version" "3.2.3"

@@ -39,11 +39,12 @@ export default function dashboard() {
     const registerUser = async event => {
         event.preventDefault()
         NProgress.start()
-        const results = await axios.post('/.netlify/functions/send-dataset-background',{
-            url_x: event.target.url_x.value,
-            url_y: event.target.url_y.value,
-            email: event.target.email.value
-        })
+        // const results = await axios.post('/.netlify/functions/send-dataset-background',{
+        //     url_x: event.target.url_x.value,
+        //     url_y: event.target.url_y.value,
+        //     email: event.target.email.value
+        // })
+        const results = await axios.post('/.netlify/functions/export-dataset-background',)
         console.log('results',results)
         NProgress.done()
         NotificationManager.success('Success', 'Scrapped html from URLs. Dataset will be sent to the given email.');
