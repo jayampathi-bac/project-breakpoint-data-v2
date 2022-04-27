@@ -44,8 +44,8 @@ export default function dashboard() {
         //     url_y: event.target.url_y.value,
         //     email: event.target.email.value
         // })
-        const results = await axios.post('/.netlify/functions/export-dataset-background',)
-        console.log('results',results)
+        const results = await axios.post('/.netlify/functions/playwright-background',)
+        console.log('results', results)
         NProgress.done()
         NotificationManager.success('Success', 'Scrapped html from URLs. Dataset will be sent to the given email.');
     }
