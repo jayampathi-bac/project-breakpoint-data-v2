@@ -1,6 +1,6 @@
 const jsdom = require("jsdom");
-// const playwright = require('playwright');
-const puppeteer = require('puppeteer-core')
+import chromium from "chrome-aws-lambda";
+// const puppeteer = require('puppeteer-core')
 const allStyleTags = require('../../utils/allStyleTags.json');
 const nodemailer = require("nodemailer");
 const Excel = require('exceljs');
@@ -141,7 +141,11 @@ function getAllStyles(elem) {
 }
 
 async function viewPortDataListFunc(url) {
-    const browser = await puppeteer.launch();
+    // const browser = await puppeteer.launch();
+
+    const browser = await chromium.puppeteer.launch({
+        executablePath: await chromium.executablePath,
+    });
 
     // const browser = await playwright.chromium.launch({
     //     headless: true // setting this to true will not run the UI
