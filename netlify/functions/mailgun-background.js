@@ -1,4 +1,5 @@
 const playwright = require('playwright');
+import chromium from "chrome-aws-lambda";
 const jsdom = require("jsdom");
 const Excel = require('exceljs');
 const nodemailer = require("nodemailer");
