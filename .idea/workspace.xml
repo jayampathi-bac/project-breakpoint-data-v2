@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing scrapping">
-      <change afterPath="$PROJECT_DIR$/netlify/functions/playwright-background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/dashboard-mailgun.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/web-scrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify/functions/playwright-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/playwright-background.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +32,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/netlify/functions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2\pages" />
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-25\project-breakpoint-data-v2\netlify\functions" />
     </key>
   </component>
@@ -55,6 +59,7 @@
       <workItem from="1650902220687" duration="8133000" />
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
+      <workItem from="1651147445564" duration="1867000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>

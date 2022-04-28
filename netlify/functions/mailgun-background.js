@@ -1,8 +1,9 @@
-const jsdom = require("jsdom");
 const playwright = require('playwright');
-const allStyleTags = require('../../utils/allStyleTags.json');
-const nodemailer = require("nodemailer");
+const jsdom = require("jsdom");
 const Excel = require('exceljs');
+const nodemailer = require("nodemailer");
+const mg = require("nodemailer-mailgun-transport");
+const allStyleTags = require('../../utils/allStyleTags.json');
 
 const VIEWPORT_WIDTHS = [
     375,
@@ -240,14 +241,23 @@ function sortByKey(array, key) {
 
 /////////////////////////////////////////////// frontend functions end   ///////////////////////////////////////////////
 
+const transporter = nodemailer.createTransport(
+    mg({
+        auth: {
+            api_key: '16675ea5f928aa10753c114cec2ac480-38029a9d-4bd54e2e',
+            domain: 'sandbox3b643221341d41968208c0aa4ba5ff5f.mailgun.org',
+        },
+    })
+);
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'userdevy.io@gmail.com',
-        pass: 'Devy.io@10'
-    }
-});
+
+// var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'userdevy.io@gmail.com',
+//         pass: 'Devy.io@10'
+//     }
+// });
 
 exports.handler = async function (event) {
     if (event.httpMethod !== 'POST') {
@@ -284,11 +294,36 @@ exports.handler = async function (event) {
         });
         const buffer = await workbook.xlsx.writeBuffer();
 
-        var mailOptions = {
-            from: 'userdevy.io@gmail.com',
-            to: email,
-            subject: `Dataset for the neural network`,
-            text: `extracted from - ${url_x} and ${url_y}`,
+        // var mailOptions = {
+        //     from: 'userdevy.io@gmail.com',
+        //     to: email,
+        //     subject: `Dataset for the neural network`,
+        //     text: `extracted from - ${url_x} and ${url_y}`,
+        //     attachments: [
+        //         {
+        //             filename,
+        //             content: buffer,
+        //             contentType:
+        //                 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        //         },
+        //     ],
+        // };
+        //
+        // transporter.sendMail(mailOptions, function (error, info) {
+        //     if (error) {
+        //         console.log(error);
+        //     } else {
+        //         console.log('Email sent: ' + info.response);
+        //     }
+        // });
+        //
+        //
+        // console.log(`test report sent: `);
+        const info = await transporter.sendMail({
+            from: 'John Doe <john@mg.yourdomain.com>',
+            to:  'userdevy.io@gmail.com',
+            subject: "Your dataset is ready! testing 221",
+            text: "See attached excel sheet. testing 221",
             attachments: [
                 {
                     filename,
@@ -297,18 +332,10 @@ exports.handler = async function (event) {
                         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 },
             ],
-        };
-
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
         });
 
+        console.log(`test report sent: ${info.messageId}`);
 
-        console.log(`test report sent: `);
         return {statusCode: 200, body: JSON.stringify({msg: "An email will be sent with the dataset..!"})}
     } catch (err) {
         console.log(err); // output to netlify function log
