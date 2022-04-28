@@ -1,5 +1,4 @@
-const chromium = require('chrome-aws-lambda');
-const playwright = require('playwright-core');
+const playwright = require('playwright');
 const jsdom = require("jsdom");
 const Excel = require('exceljs');
 const nodemailer = require("nodemailer");
@@ -145,9 +144,7 @@ async function viewPortDataListFunc(url) {
     // const browser = await puppeteer.launch();
 
     const browser = await playwright.chromium.launch({
-        args: chromium.args,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
+        headless: true // setting this to true will not run the UI
     });
 
     // const page = await browser.newPage();

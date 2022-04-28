@@ -1,6 +1,5 @@
 const jsdom = require("jsdom");
-import chromium from "chrome-aws-lambda";
-// const puppeteer = require('puppeteer-core')
+const chromium = require('chrome-aws-lambda');
 const allStyleTags = require('../../utils/allStyleTags.json');
 const nodemailer = require("nodemailer");
 const Excel = require('exceljs');
@@ -145,19 +144,21 @@ async function viewPortDataListFunc(url) {
 
     const browser = await chromium.puppeteer.launch({
         executablePath: await chromium.executablePath,
+        args: [...chromium.args, '--disable-features=AudioServiceOutOfProcess',
+            '--disable-gpu',
+            '--disable-software-rasterize'
+        ],
+        defaultViewport: chromium.defaultViewport,
+        headless: chromium.headless,
     });
 
-    // const browser = await playwright.chromium.launch({
-    //     headless: true // setting this to true will not run the UI
-    // });
+    // const page = await browser.newPage();
+    // await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
+    // await page.setDefaultNavigationTimeout(0);
 
     const page = await browser.newPage();
-    await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
-    await page.setDefaultNavigationTimeout(0);
-
-    // const page = await browser.newPage();
-    // await page.goto(url);
-    // await page.waitForTimeout(0);
+    await page.goto(url);
+    await page.waitForTimeout(0);
 
     const styleMap = {};
 
