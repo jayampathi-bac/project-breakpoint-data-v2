@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using mailgun">
-      <change afterPath="$PROJECT_DIR$/netlify/functions/pup-core-background.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/dashboard-pup-core.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +28,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -41,6 +39,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2" />
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2\pages" />
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2\netlify\functions" />
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-25\project-breakpoint-data-v2\netlify\functions" />
@@ -59,7 +58,7 @@
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
       <workItem from="1651147445564" duration="2864000" />
-      <workItem from="1651155715860" duration="1474000" />
+      <workItem from="1651155715860" duration="1847000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
@@ -75,7 +74,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651149363628</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="testing using mailgun">
+      <created>1651157236417</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651157236417</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
