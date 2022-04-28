@@ -60,7 +60,7 @@
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
       <workItem from="1651147445564" duration="2864000" />
-      <workItem from="1651155715860" duration="9068000" />
+      <workItem from="1651155715860" duration="9424000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
@@ -139,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651165871733</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="testing using chromium">
+      <created>1651166336819</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651166336819</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

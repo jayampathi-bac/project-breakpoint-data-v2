@@ -1,5 +1,6 @@
 const jsdom = require("jsdom");
-const chromium = require('chrome-aws-lambda')
+const chromium = require('chrome-aws-lambda');
+const playwright = require('playwright-core');
 // const puppeteer = require('puppeteer-core')
 const allStyleTags = require('../../utils/allStyleTags.json');
 const nodemailer = require("nodemailer");
@@ -143,7 +144,7 @@ function getAllStyles(elem) {
 async function viewPortDataListFunc(url) {
     // const browser = await puppeteer.launch();
 
-    const browser = chromium.puppeteer.launch({
+    const browser = await playwright.chromium.launch({
         args: chromium.args,
         // get path to browser
         executablePath: process.env.EXCECUTABLE_PATH || await chromium.executablePath,
