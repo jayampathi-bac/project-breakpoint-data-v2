@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using mailgun">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netlify/functions/pup-core-background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/dashboard-pup-core.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +42,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2\pages" />
+      <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-28\project-breakpoint-data-v2\netlify\functions" />
       <recent name="C:\Users\Admin\Documents\Workplace\DEVY.io\2022-04-25\project-breakpoint-data-v2\netlify\functions" />
     </key>
   </component>
@@ -59,6 +59,7 @@
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
       <workItem from="1651147445564" duration="2864000" />
+      <workItem from="1651155715860" duration="1474000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
