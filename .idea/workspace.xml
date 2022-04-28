@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing scrapping">
-      <change afterPath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/dashboard-mailgun.js" afterDir="false" />
+    <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using mailgun">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/playwright-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/playwright-background.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <workItem from="1650902220687" duration="8133000" />
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
-      <workItem from="1651147445564" duration="1867000" />
+      <workItem from="1651147445564" duration="2864000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
@@ -68,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650908623084</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="testing using mailgun">
+      <created>1651149363627</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1651149363628</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,6 +94,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testing scrapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing scrapping" />
+    <MESSAGE value="testing using mailgun" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing using mailgun" />
   </component>
 </project>

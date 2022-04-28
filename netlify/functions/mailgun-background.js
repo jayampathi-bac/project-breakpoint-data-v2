@@ -244,8 +244,8 @@ function sortByKey(array, key) {
 const transporter = nodemailer.createTransport(
     mg({
         auth: {
-            api_key: '16675ea5f928aa10753c114cec2ac480-38029a9d-4bd54e2e',
-            domain: 'sandbox3b643221341d41968208c0aa4ba5ff5f.mailgun.org',
+            api_key: process.env.MAILGUN_API_KEY,
+            domain: process.env.DOMAIN,
         },
     })
 );
@@ -260,6 +260,7 @@ const transporter = nodemailer.createTransport(
 // });
 
 exports.handler = async function (event) {
+    console.log('mailgun api',process.env.MAILGUN_API_KEY , process.env.DOMAIN)
     if (event.httpMethod !== 'POST') {
         return {statusCode: 405, body: 'Method Not Allowed'};
     }
@@ -321,9 +322,9 @@ exports.handler = async function (event) {
         // console.log(`test report sent: `);
         const info = await transporter.sendMail({
             from: 'John Doe <john@mg.yourdomain.com>',
-            to:  'userdevy.io@gmail.com',
-            subject: "Your dataset is ready! testing 221",
-            text: "See attached excel sheet. testing 221",
+            to: email,
+            subject: "Your dataset is ready! Mailgun",
+            text: `See attached excel sheet. Extracted data using ${url_x} and ${url_y}`,
             attachments: [
                 {
                     filename,
