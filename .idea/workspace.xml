@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using chromium">
-      <change beforePath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/mailgun-background.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netlify/functions/pup-core-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/pup-core-background.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +59,7 @@
       <workItem from="1650952814103" duration="1846000" />
       <workItem from="1651073709254" duration="390000" />
       <workItem from="1651147445564" duration="2864000" />
-      <workItem from="1651155715860" duration="6394000" />
+      <workItem from="1651155715860" duration="6657000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
@@ -118,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651162005054</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="testing using chromium">
+      <created>1651162279905</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651162279905</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
