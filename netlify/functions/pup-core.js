@@ -82,6 +82,7 @@ async function collectCSSFromPage(page, width) {
 }
 
 async function viewPortDataListFunc(url) {
+    url = JSON.parse(url)
     // const browser = await puppeteer.launch();
     const browser = await puppeteer.launch({
         args: chromium.args,
