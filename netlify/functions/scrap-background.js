@@ -1,5 +1,5 @@
 const axios = require("axios");
-const allStyleTags = require('../utils/allStyleTags.json');
+const allStyleTags = require('../../utils/allStyleTags.json');
 const nodemailer = require("nodemailer");
 const mg = require("nodemailer-mailgun-transport");
 const Excel = require('exceljs');
