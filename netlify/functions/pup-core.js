@@ -1,6 +1,6 @@
 const chromium = require('chrome-aws-lambda');
-// const puppeteer = require('puppeteer-core')
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core')
+// const puppeteer = require('puppeteer');
 
 const VIEWPORT_WIDTHS = [
     375,
@@ -83,12 +83,12 @@ async function collectCSSFromPage(page, width) {
 }
 
 async function viewPortDataListFunc(url) {
-    const browser = await puppeteer.launch();
-    // const browser = await puppeteer.launch({
-    //     args: chromium.args,
-    //     executablePath: process.env.EXCECUTABLE_PATH || await chromium.executablePath,
-    //     headless: true
-    // })
+    // const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: chromium.args,
+        executablePath: process.env.EXCECUTABLE_PATH || await chromium.executablePath,
+        headless: true
+    })
 
     const page = await browser.newPage();
 
