@@ -19,11 +19,11 @@ async function saveScrappedData(url_x, url_y) {
 
     console.log("saveScrappedData - REQ RECEIVED: ", url_x, url_y)
 
-    const viewPortDataList_resp = await axios.post(`${process.env.BASE_URL}.netlify/functions/pup-core`, {targetURL: url_x});
+    const viewPortDataList_resp = await axios.post(`https://breakpoint-responsify-v22.netlify.app/.netlify/functions/pup-core`, {targetURL: url_x});
     const viewPortDataList_X = viewPortDataList_resp.data
     viewPortDataList_X ? console.log('extracted from ', url_x) : console.log('failed to extract from ', url_x)
 
-    const viewPortDataList_Y_resp = await axios.post(`${process.env.BASE_URL}.netlify/functions/pup-core`, {targetURL: url_y});
+    const viewPortDataList_Y_resp = await axios.post(`https://breakpoint-responsify-v22.netlify.app/.netlify/functions/pup-core`, {targetURL: url_y});
     const viewPortDataList_Y = viewPortDataList_Y_resp.data
     viewPortDataList_Y ? console.log('extracted from ', url_y) : console.log('failed to extract from ', url_y)
 
