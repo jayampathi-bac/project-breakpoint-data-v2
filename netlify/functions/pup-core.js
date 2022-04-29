@@ -13,8 +13,6 @@ const VIEWPORT_WIDTHS = [
     1920
 ]
 
-
-
 async function collectCSSFromPage(page, width) {
     await page.setViewport({width, height: 900});
 
@@ -25,14 +23,9 @@ async function collectCSSFromPage(page, width) {
             nodes = nodes || [];
 
             if (element.nodeType === 1) {
-                var node = {};
-                // node[`HTML Element-${variable}`] = element.tagName;
-                // node[`CSS Class-${variable}`] = element.className;
-                //node.styles = getAllStyles(element, variable);
                 nodes.push(getAllStyles(element, variable, parent));
-                // nodes.push(node);
 
-                for (var i = 0; i < element.childNodes.length; i++) {
+                for (let i = 0; i < element.childNodes.length; i++) {
                     traversDOM(element.childNodes[i], element, nodes, variable);
                 }
             }
@@ -40,23 +33,21 @@ async function collectCSSFromPage(page, width) {
         }
 
         function getAllStyles(elem, variable, parentElement) {
+            let i;
             if (!elem) return []; // Element does not exist, empty list.
-            var win = document.defaultView || window, style, styleNode = [];
+            let win = document.defaultView || window, style, styleNode = [];
             const allAllStylesMap = {};
             if (win.getComputedStyle) { /* Modern browsers */
                 style = win.getComputedStyle(elem, '');
-                //const allAllStylesMap = {};
 
                 allAllStylesMap[`Breakpoint-${variable}`] = window.innerWidth;
                 allAllStylesMap[`HTML Element-${variable}`] = elem.tagName;
                 allAllStylesMap[`CSS Class-${variable}`] = elem.className;
                 allAllStylesMap[`CSS Class Parent-${variable}`] = parentElement.className;
 
-                for (var i = 0; i < style.length; i++) {
+                for (i = 0; i < style.length; i++) {
                     allAllStylesMap[`${style[i]}-${variable}`] = style.getPropertyValue(style[i]);
                     styleNode.push(allAllStylesMap);
-                    //styleNode.push(style[i] + ':' + style.getPropertyValue(style[i]));
-                    //               ^name ^           ^ value ^
                 }
             } else if (elem.currentStyle) { /* IE */
                 style = elem.currentStyle;
@@ -65,7 +56,7 @@ async function collectCSSFromPage(page, width) {
                 }
             } else { /* Ancient browser..*/
                 style = elem.style;
-                for (var i = 0; i < style.length; i++) {
+                for (i = 0; i < style.length; i++) {
                     styleNode.push(style[i] + ':' + style[style[i]]);
                 }
             }
@@ -76,7 +67,6 @@ async function collectCSSFromPage(page, width) {
         ['xvar', 'yvar'].forEach(_variable => {
             styleMap[_variable] = traversDOM(document.body, undefined, undefined, _variable)
         })
-        //    return traversDOM(document.body);
         return styleMap;
     });
 }
@@ -90,8 +80,6 @@ async function viewPortDataListFunc(url) {
     })
 
     const page = await browser.newPage();
-    // await page.goto(url);
-    // await page.waitForTimeout(0);
 
     await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
 
@@ -109,15 +97,12 @@ async function viewPortDataListFunc(url) {
     return styleMap;
 }
 
-
 exports.handler = async (event, context) => {
 
     const response = JSON.parse(event.body);
 
     console.log('response',response, response.targetURL)
     const data = await viewPortDataListFunc(response.targetURL)
-
-    // const name = `${email} _ ${url_x} _ ${url_y}` || "World";
 
     return {
         statusCode: 200,

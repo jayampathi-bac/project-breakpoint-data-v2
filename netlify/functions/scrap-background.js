@@ -74,7 +74,6 @@ function prepareExcelHeaders() {
     })
     console.log("headers are prepared for the excel sheet.")
     return sortByKey(titles, 'groupKey');
-    // return titles
 }
 
 function sortByKey(array, key) {
@@ -86,14 +85,6 @@ function sortByKey(array, key) {
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
-
-// const transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: 'userdevy.io@gmail.com',
-//         pass: 'Devy.io@10'
-//     }
-// });
 
 const transporter = nodemailer.createTransport(
     mg({
@@ -126,9 +117,9 @@ exports.handler = async function (event) {
 
     const info = await transporter.sendMail({
         from: 'John Doe <john@mg.yourdomain.com>',
-        to:  email,
-        subject: "Your dataset is ready! testing",
-        text: "See attached excel sheet. testing",
+        to: email,
+        subject: "Your dataset is ready!",
+        text: `Extracted dataset from ${url_x} and ${url_y}. See attached excel sheet. `,
         attachments: [
             {
                 filename,
