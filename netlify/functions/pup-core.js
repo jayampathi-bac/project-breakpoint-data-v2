@@ -52,7 +52,6 @@ async function collectCSSFromPage(page, width) {
                 allAllStylesMap[`CSS Class-${variable}`] = elem.className;
                 allAllStylesMap[`CSS Class Parent-${variable}`] = parentElement.className;
 
-
                 for (var i = 0; i < style.length; i++) {
                     allAllStylesMap[`${style[i]}-${variable}`] = style.getPropertyValue(style[i]);
                     styleNode.push(allAllStylesMap);
@@ -91,6 +90,8 @@ async function viewPortDataListFunc(url) {
     })
 
     const page = await browser.newPage();
+    // await page.goto(url);
+    // await page.waitForTimeout(0);
 
     await page.goto(url, {waitUntil: 'networkidle0', timeout: 0});
 
@@ -101,6 +102,7 @@ async function viewPortDataListFunc(url) {
 
         styleMap[width] = await collectCSSFromPage(page, width)
     }
+
 
     await browser.close();
 

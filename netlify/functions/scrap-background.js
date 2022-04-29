@@ -35,7 +35,7 @@ async function saveScrappedData(url_x, url_y) {
             viewPortDataList_Y[XY_MAP[key]]['yvar'].forEach((element_y) => {
 
                 if (element_x['Breakpoint-xvar'] && element_x['CSS Class-xvar'] && element_x['Breakpoint-xvar'] === element_y['Breakpoint-yvar'] && element_x['CSS Class-xvar'] === element_y['CSS Class-yvar']) {
-
+                    // console.log("key_x",element_x['Breakpoint-xvar'] , element_x['CSS Class-xvar'], " - key_y",element_y['Breakpoint-yvar'] , element_y['CSS Class-yvar'])
                     styleData.push({...element_x, ...element_y});
                 }
             })
@@ -78,6 +78,7 @@ function prepareExcelHeaders() {
 }
 
 function sortByKey(array, key) {
+    // console.log(array)
     return array.sort((a, b) => {
         let x = a[key];
         let y = b[key];
@@ -113,6 +114,8 @@ exports.handler = async function (event) {
     const filename = 'Dataset.xlsx';
     let workbook = new Excel.Workbook();
     let worksheet = workbook.addWorksheet('Dataset');
+
+
     worksheet.columns = headers;
 
     style_data.forEach((e) => {
