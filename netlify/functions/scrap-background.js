@@ -19,11 +19,11 @@ async function saveScrappedData(url_x, url_y) {
 
     console.log("saveScrappedData - REQ RECEIVED: ", url_x, url_y)
 
-    const viewPortDataList_resp = await axios.post(`https://vue-test-22.netlify.app/.netlify/functions/pup-core`, {targetURL: url_x});
+    const viewPortDataList_resp = await axios.post(`${process.env.BASE_URL}.netlify/functions/pup-core`, {targetURL: url_x});
     const viewPortDataList_X = viewPortDataList_resp.data
     viewPortDataList_X ? console.log('extracted from ', url_x) : console.log('failed to extract from ', url_x)
 
-    const viewPortDataList_Y_resp = await axios.post(`https://vue-test-22.netlify.app/.netlify/functions/pup-core`, {targetURL: url_y});
+    const viewPortDataList_Y_resp = await axios.post(`${process.env.BASE_URL}.netlify/functions/pup-core`, {targetURL: url_y});
     const viewPortDataList_Y = viewPortDataList_Y_resp.data
     viewPortDataList_Y ? console.log('extracted from ', url_y) : console.log('failed to extract from ', url_y)
 
@@ -35,13 +35,14 @@ async function saveScrappedData(url_x, url_y) {
             viewPortDataList_Y[XY_MAP[key]]['yvar'].forEach((element_y) => {
 
                 if (element_x['Breakpoint-xvar'] && element_x['CSS Class-xvar'] && element_x['Breakpoint-xvar'] === element_y['Breakpoint-yvar'] && element_x['CSS Class-xvar'] === element_y['CSS Class-yvar']) {
-
+                    // console.log("key_x",element_x['Breakpoint-xvar'] , element_x['CSS Class-xvar'], " - key_y",element_y['Breakpoint-yvar'] , element_y['CSS Class-yvar'])
                     styleData.push({...element_x, ...element_y});
                 }
             })
 
         })
     })
+
 
     console.log("matched the css classes of x and y variables..!")
     return styleData;
@@ -73,15 +74,26 @@ function prepareExcelHeaders() {
     })
     console.log("headers are prepared for the excel sheet.")
     return sortByKey(titles, 'groupKey');
+    // return titles
 }
 
 function sortByKey(array, key) {
+    // console.log(array)
     return array.sort((a, b) => {
         let x = a[key];
         let y = b[key];
+
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
     });
 }
+
+// const transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'userdevy.io@gmail.com',
+//         pass: 'Devy.io@10'
+//     }
+// });
 
 const transporter = nodemailer.createTransport(
     mg({
@@ -97,14 +109,11 @@ exports.handler = async function (event) {
 
     const style_data = await saveScrappedData(url_x, url_y);
 
-
     const headers = await prepareExcelHeaders();
 
     const filename = 'Dataset.xlsx';
     let workbook = new Excel.Workbook();
     let worksheet = workbook.addWorksheet('Dataset');
-
-
     worksheet.columns = headers;
 
     style_data.forEach((e) => {
@@ -116,8 +125,8 @@ exports.handler = async function (event) {
     const info = await transporter.sendMail({
         from: 'John Doe <john@mg.yourdomain.com>',
         to:  email,
-        subject: "Your dataset is ready!",
-        text: `Dataset is extracted from ${url_x} and ${url_y}. See the attached excel sheet.`,
+        subject: "Your dataset is ready! testing",
+        text: "See attached excel sheet. testing",
         attachments: [
             {
                 filename,

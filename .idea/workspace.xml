@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using chromium">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netlify/functions/pup-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/pup-core.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/netlify/functions/scrap-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/scrap-background.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +63,7 @@
       <workItem from="1651147445564" duration="2864000" />
       <workItem from="1651155715860" duration="17428000" />
       <workItem from="1651231748283" duration="73000" />
-      <workItem from="1651231830906" duration="1684000" />
+      <workItem from="1651231830906" duration="3182000" />
     </task>
     <task id="LOCAL-00001" summary="testing scrapping">
       <created>1650908623084</created>
@@ -161,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651233992134</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="testing using chromium">
+      <created>1651234200157</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651234200157</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
