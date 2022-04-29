@@ -40,7 +40,6 @@ async function collectCSSFromPage(page, width) {
         }
 
         function getAllStyles(elem, variable, parentElement) {
-            console.log("---------------------------------------")
             if (!elem) return []; // Element does not exist, empty list.
             var win = document.defaultView || window, style, styleNode = [];
             const allAllStylesMap = {};
@@ -52,7 +51,7 @@ async function collectCSSFromPage(page, width) {
                 allAllStylesMap[`HTML Element-${variable}`] = elem.tagName;
                 allAllStylesMap[`CSS Class-${variable}`] = elem.className;
                 allAllStylesMap[`CSS Class Parent-${variable}`] = parentElement.className;
-                console.log("parent ", parentElement.className)
+
 
                 for (var i = 0; i < style.length; i++) {
                     allAllStylesMap[`${style[i]}-${variable}`] = style.getPropertyValue(style[i]);
@@ -103,9 +102,8 @@ async function viewPortDataListFunc(url) {
         styleMap[width] = await collectCSSFromPage(page, width)
     }
 
-    // console.log("DATA FROM EVAL ", styleMap)
     await browser.close();
-    console.log("extracted data from : ", url)
+
     return styleMap;
 }
 
