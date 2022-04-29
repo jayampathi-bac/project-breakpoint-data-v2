@@ -39,7 +39,7 @@ export default function dashboard() {
     const registerUser = async event => {
         event.preventDefault()
         NProgress.start()
-        const results = await axios.post('/.netlify/functions/playwright-background',{
+        const results = await axios.post('/.netlify/functions/scrap-background',{
             url_x: event.target.url_x.value,
             url_y: event.target.url_y.value,
             email: event.target.email.value

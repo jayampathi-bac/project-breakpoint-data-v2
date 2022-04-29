@@ -17,6 +17,7 @@
     "chrome-aws-lambda": "^10.1.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "exceljs": "^4.3.0",
     "export-to-excel": "^0.2.1",
     "export-xlsx": "^0.1.2",
     "express": "^4.17.1",
