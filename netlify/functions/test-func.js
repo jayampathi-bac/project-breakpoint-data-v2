@@ -1,10 +1,10 @@
 exports.handler = async (event, context) => {
     const name = event.queryStringParameters.name || "World";
 
-    let i = 60;
+    let i = 0;
     function onTimer() {
-        i--;
-        if (i < 0) {
+        i++;
+        if (i > 61) {
             console.log(' timeout over')
         }
         else {
