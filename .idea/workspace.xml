@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using chromium">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/pup-core.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/pup-core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify/functions/scrap-background.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/scrap-background.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netlify/functions/test-func.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
