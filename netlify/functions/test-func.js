@@ -4,8 +4,12 @@ exports.handler = async (event, context) => {
     let i = 0;
     function onTimer() {
         i++;
-        if (i > 61) {
+        if (i > 60) {
             console.log(' timeout over')
+            return {
+                statusCode: 200,
+                body: `Hello, ${name} timout over`,
+            };
         }
         else {
             console.log('timout ',i)
@@ -14,9 +18,4 @@ exports.handler = async (event, context) => {
     }
 
     onTimer()
-
-    return {
-        statusCode: 200,
-        body: `Hello, ${name}`,
-    };
 };
