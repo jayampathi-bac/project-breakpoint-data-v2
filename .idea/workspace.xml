@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using chromium">
-      <change afterPath="$PROJECT_DIR$/netlify/functions/test-func.js" afterDir="false" />
+    <list default="true" id="3ef3eee1-5024-426c-9ae0-e1b7afedd4d3" name="Changes" comment="testing using timeout">
+      <change beforePath="$PROJECT_DIR$/netlify/functions/test-func.js" beforeDir="false" afterPath="$PROJECT_DIR$/netlify/functions/test-func.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651239673785</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="testing using timeout">
+      <created>1651500466286</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1651500466286</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +253,7 @@
     <MESSAGE value="testing scrapping" />
     <MESSAGE value="testing using mailgun" />
     <MESSAGE value="testing using chromium" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing using chromium" />
+    <MESSAGE value="testing using timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing using timeout" />
   </component>
 </project>
