@@ -115,6 +115,16 @@ exports.handler = async function (event) {
 
     const buffer = await workbook.xlsx.writeBuffer();
 
+    workbook.xlsx
+        .writeFile("newSaveeee.xlsx")
+        .then(response => {
+            console.log("file is written");
+            console.log(path.join(__dirname, "../newDataset.xlsx"));
+        })
+        .catch(err => {
+            console.log(err);
+        });
+
     const info = await transporter.sendMail({
         from: 'John Doe <john@mg.yourdomain.com>',
         to: email,
